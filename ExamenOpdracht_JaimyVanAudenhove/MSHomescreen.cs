@@ -19,7 +19,9 @@ namespace ExamenOpdracht_JaimyVanAudenhove
 
         private void btnLocatie1Home_Click(object sender, EventArgs e)
         {
-
+            var LocationGent = new MSGent();
+            this.Hide();
+            LocationGent.Show();
         }
 
         private void btnLocatie2Home_Click(object sender, EventArgs e)

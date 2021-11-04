@@ -38,11 +38,12 @@
             // 
             // lbWelcomeHomescreen
             // 
-            this.lbWelcomeHomescreen.AutoSize = true;
+            this.lbWelcomeHomescreen.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbWelcomeHomescreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWelcomeHomescreen.Location = new System.Drawing.Point(361, 29);
+            this.lbWelcomeHomescreen.Location = new System.Drawing.Point(0, 0);
             this.lbWelcomeHomescreen.Name = "lbWelcomeHomescreen";
-            this.lbWelcomeHomescreen.Size = new System.Drawing.Size(66, 20);
+            this.lbWelcomeHomescreen.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.lbWelcomeHomescreen.Size = new System.Drawing.Size(787, 68);
             this.lbWelcomeHomescreen.TabIndex = 0;
             this.lbWelcomeHomescreen.Text = "Welkom";
             this.lbWelcomeHomescreen.TextAlign = System.Drawing.ContentAlignment.TopCenter;
