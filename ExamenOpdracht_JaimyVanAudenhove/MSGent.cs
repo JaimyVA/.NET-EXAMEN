@@ -31,6 +31,14 @@ namespace ExamenOpdracht_JaimyVanAudenhove
             BackToLocationSelect.Show();
         }
 
+        private void uitloggenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var BackToLogin = new MSLogin();
+            this.Hide();
+            BackToLogin.Show();
+        }
+
+
         private void MSGent_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'examenDotNETAdvancedDataSet.Movies' table. You can move, or remove it, as needed.

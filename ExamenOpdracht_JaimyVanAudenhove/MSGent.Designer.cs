@@ -50,6 +50,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.moviesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.uitloggenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.examenDotNETAdvancedDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
@@ -67,14 +68,15 @@
             this.movieStoreToolStripMenuMovieStore});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(744, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStripMSGent";
             // 
             // movieStoreToolStripMenuMovieStore
             // 
             this.movieStoreToolStripMenuMovieStore.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.LocatieSelectToolStripMenuItem});
+            this.LocatieSelectToolStripMenuItem,
+            this.uitloggenToolStripMenuItem});
             this.movieStoreToolStripMenuMovieStore.Name = "movieStoreToolStripMenuMovieStore";
             this.movieStoreToolStripMenuMovieStore.Size = new System.Drawing.Size(79, 20);
             this.movieStoreToolStripMenuMovieStore.Text = "MovieStore";
@@ -112,6 +114,10 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -125,7 +131,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(744, 426);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -196,11 +202,18 @@
             this.moviesBindingSource2.DataMember = "Movies";
             this.moviesBindingSource2.DataSource = this.examenDotNETAdvancedDataSetBindingSource;
             // 
+            // uitloggenToolStripMenuItem
+            // 
+            this.uitloggenToolStripMenuItem.Name = "uitloggenToolStripMenuItem";
+            this.uitloggenToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.uitloggenToolStripMenuItem.Text = "Uitloggen";
+            this.uitloggenToolStripMenuItem.Click += new System.EventHandler(this.uitloggenToolStripMenuItem_Click);
+            // 
             // MSGent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(744, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -246,5 +259,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rentalDurationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountGentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Lenen;
+        private System.Windows.Forms.ToolStripMenuItem uitloggenToolStripMenuItem;
     }
 }

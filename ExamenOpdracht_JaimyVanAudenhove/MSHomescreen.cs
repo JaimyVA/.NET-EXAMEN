@@ -26,17 +26,28 @@ namespace ExamenOpdracht_JaimyVanAudenhove
 
         private void btnLocatie2Home_Click(object sender, EventArgs e)
         {
-
+            var LocationBrussel = new MSBrussel();
+            this.Hide();
+            LocationBrussel.Show();
         }
 
         private void btnLocatie3Home_Click(object sender, EventArgs e)
         {
-
+            var LocationAntwerpen = new MSAntwerpen();
+            this.Hide();
+            LocationAntwerpen.Show();
         }
 
         private void MSHomescreen_Load(object sender, EventArgs e)
         {
             lbWelcomeHomescreen.Text = "Welkom " + MSLogin.SetValueForUserName + "!";
+        }
+
+        private void uitloggenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var BackToLogin = new MSLogin();
+            this.Hide();
+            BackToLogin.Show();
         }
     }
 }

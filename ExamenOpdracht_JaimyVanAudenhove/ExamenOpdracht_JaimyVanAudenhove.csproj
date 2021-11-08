@@ -87,6 +87,18 @@
     <Compile Include="Movy.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="MSAntwerpen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSAntwerpen.Designer.cs">
+      <DependentUpon>MSAntwerpen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MSBrussel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSBrussel.Designer.cs">
+      <DependentUpon>MSBrussel.cs</DependentUpon>
+    </Compile>
     <Compile Include="MSHomescreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +127,12 @@
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSAntwerpen.resx">
+      <DependentUpon>MSAntwerpen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSBrussel.resx">
+      <DependentUpon>MSBrussel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MSHomescreen.resx">
       <DependentUpon>MSHomescreen.cs</DependentUpon>
