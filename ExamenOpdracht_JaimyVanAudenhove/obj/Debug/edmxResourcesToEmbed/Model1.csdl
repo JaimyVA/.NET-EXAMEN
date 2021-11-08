@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExamenDotNETAdvancedModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Movy">
+    <Key>
+      <PropertyRef Name="MovieId" />
+    </Key>
+    <Property Name="MovieId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Rating" Type="Int32" Nullable="false" />
+    <Property Name="Rental_Duration" Type="Int32" Nullable="false" />
+    <Property Name="Amount_Gent" Type="Int32" Nullable="false" />
+    <Property Name="Amount_Brussel" Type="Int32" Nullable="false" />
+    <Property Name="Amount_Antwerpen" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Rentals" Relationship="Self.Movie_Rentals" FromRole="Movies" ToRole="Rental" />
+  </EntityType>
+  <EntityType Name="Rental">
+    <Key>
+      <PropertyRef Name="Rental_Id" />
+    </Key>
+    <Property Name="Rental_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rental_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Rental_Expiry" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Users_ToMovies" FromRole="Rental" ToRole="Users" />
+    <NavigationProperty Name="Movies" Relationship="Self.Movie_Rentals" FromRole="Rental" ToRole="Movies" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Rentals" Relationship="Self.FK_Users_ToMovies" FromRole="Users" ToRole="Rental" />
+  </EntityType>
+  <Association Name="FK_Users_ToMovies">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rental">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Movie_Rentals">
+    <End Role="Movies" Type="Self.Movy" Multiplicity="*" />
+    <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="ExamenDotNETAdvancedEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Movies" EntityType="Self.Movy" />
+    <EntitySet Name="Rentals" EntityType="Self.Rental" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Users_ToMovies" Association="Self.FK_Users_ToMovies">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Rental" EntitySet="Rentals" />
+    </AssociationSet>
+    <AssociationSet Name="Movie_Rentals" Association="Self.Movie_Rentals">
+      <End Role="Movies" EntitySet="Movies" />
+      <End Role="Rental" EntitySet="Rentals" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

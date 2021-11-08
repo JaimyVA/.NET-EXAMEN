@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ExamenDotNETAdvancedModelStoreContainer" CdmEntityContainer="ExamenDotNETAdvancedEntities">
+    <EntitySetMapping Name="Movies">
+      <EntityTypeMapping TypeName="ExamenDotNETAdvancedModel.Movy">
+        <MappingFragment StoreEntitySet="Movies">
+          <ScalarProperty Name="MovieId" ColumnName="MovieId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Rental_Duration" ColumnName="Rental_Duration" />
+          <ScalarProperty Name="Amount_Gent" ColumnName="Amount_Gent" />
+          <ScalarProperty Name="Amount_Brussel" ColumnName="Amount_Brussel" />
+          <ScalarProperty Name="Amount_Antwerpen" ColumnName="Amount_Antwerpen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rentals">
+      <EntityTypeMapping TypeName="ExamenDotNETAdvancedModel.Rental">
+        <MappingFragment StoreEntitySet="Rental">
+          <ScalarProperty Name="Rental_Id" ColumnName="Rental_Id" />
+          <ScalarProperty Name="Rental_Date" ColumnName="Rental_Date" />
+          <ScalarProperty Name="Rental_Expiry" ColumnName="Rental_Expiry" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ExamenDotNETAdvancedModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Movie_Rentals" TypeName="ExamenDotNETAdvancedModel.Movie_Rentals" StoreEntitySet="Movie_Rentals">
+      <EndProperty Name="Movies">
+        <ScalarProperty Name="MovieId" ColumnName="MovieId" />
+      </EndProperty>
+      <EndProperty Name="Rental">
+        <ScalarProperty Name="Rental_Id" ColumnName="RentalId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

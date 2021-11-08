@@ -35,7 +35,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove
                         if (dr.Read())
                         {
                             dr.Close();
-                            MessageBox.Show("Username Already exist please try another ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Deze gebruikersnaam bestaat al, probeer een andere", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
