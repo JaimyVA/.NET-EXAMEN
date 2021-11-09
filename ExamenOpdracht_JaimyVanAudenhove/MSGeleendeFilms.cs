@@ -40,6 +40,17 @@ namespace ExamenOpdracht_JaimyVanAudenhove
 
         private void MSGeleendeFilms_Load(object sender, EventArgs e)
         {
+            try
+            {
+                this.rentalTableAdapter.Fill(this.examenDotNETAdvancedDataSet.Rental);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            // TODO: This line of code loads data into the 'examenDotNETAdvancedDataSet.Movie_Rentals' table. You can move, or remove it, as needed.
+            this.movie_RentalsTableAdapter.Fill(this.examenDotNETAdvancedDataSet.Movie_Rentals);
             cn = new SqlConnection(@"Data Source=jaimy.database.windows.net;Initial Catalog=ExamenDotNETAdvanced;Persist Security Info=True;User ID=jaimy;Password=DotNetExamen1;MultipleActiveResultSets=true");
             cn.Open();
 
@@ -48,8 +59,6 @@ namespace ExamenOpdracht_JaimyVanAudenhove
 
         private void BindGrid()
         {
-            //var RentalIdCell = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            //var MovieIdCell = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
             //Hide the last blank line.
             dataGridView1.AllowUserToAddRows = false;
 
@@ -120,5 +129,20 @@ namespace ExamenOpdracht_JaimyVanAudenhove
             dataGridView1.Columns.Insert(5, TerugBrengen);
         }
 
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            var RentalIdCell = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            var FilmNameCell = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
+
+            //Return Movie Query
+            //cmd = new SqlCommand("DELETE Rental.Rental_Id, Rental.Rental_Date, Rental.Rental_Expiry, Movie_Rentals.RentalId, Movie_Rentals.MoevieId FROM Rental inner join Movie_Rentals on Rental.Rental_Id = Movie_Rentals.RentalId WHERE Rental_Id = '" + RentalIdCell + "'", cn);
+            //cmd = new SqlCommand("DELETE Rental.Rental_Id, Rental.Rental_Date, Rental.Rental_Expiry, Movie_Rentals.MovieId FROM Rental inner join Movie_Rentals on Rental.Rental_Id = Movie_Rentals.RentalId WHERE Rental_Id = '" + RentalIdCell + "'", cn);
+            cmd = new SqlCommand("DELETE FROM Movie_Rentals Where RentalId = '" + RentalIdCell + "'; DELETE FROM  Rental Where Rental_Id = '" + RentalIdCell + "'", cn);
+            dr = cmd.ExecuteReader();
+            dr.Close();
+            cmd.ExecuteNonQuery();
+            this.BindGrid();
+            MessageBox.Show("Bedankt dat je " + FilmNameCell + " Terug hebt teruggebracht!");
+        }
     }
 }

@@ -28,13 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.movieStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.locatieSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uitloggenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.examenDotNETAdvancedDataSet = new ExamenOpdracht_JaimyVanAudenhove.ExamenDotNETAdvancedDataSet();
+            this.movieRentalsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.movie_RentalsTableAdapter = new ExamenOpdracht_JaimyVanAudenhove.ExamenDotNETAdvancedDataSetTableAdapters.Movie_RentalsTableAdapter();
+            this.rentalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rentalTableAdapter = new ExamenOpdracht_JaimyVanAudenhove.ExamenDotNETAdvancedDataSetTableAdapters.RentalTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.examenDotNETAdvancedDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movieRentalsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentalBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -72,12 +81,42 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.rentalBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(800, 426);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // examenDotNETAdvancedDataSet
+            // 
+            this.examenDotNETAdvancedDataSet.DataSetName = "ExamenDotNETAdvancedDataSet";
+            this.examenDotNETAdvancedDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // movieRentalsBindingSource
+            // 
+            this.movieRentalsBindingSource.DataMember = "Movie_Rentals";
+            this.movieRentalsBindingSource.DataSource = this.examenDotNETAdvancedDataSet;
+            // 
+            // movie_RentalsTableAdapter
+            // 
+            this.movie_RentalsTableAdapter.ClearBeforeFill = true;
+            // 
+            // rentalBindingSource
+            // 
+            this.rentalBindingSource.DataMember = "Rental";
+            this.rentalBindingSource.DataSource = this.examenDotNETAdvancedDataSet;
+            // 
+            // rentalTableAdapter
+            // 
+            this.rentalTableAdapter.ClearBeforeFill = true;
             // 
             // MSGeleendeFilms
             // 
@@ -94,6 +133,9 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.examenDotNETAdvancedDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movieRentalsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentalBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,5 +148,10 @@
         private System.Windows.Forms.ToolStripMenuItem locatieSelectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uitloggenToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private ExamenDotNETAdvancedDataSet examenDotNETAdvancedDataSet;
+        private System.Windows.Forms.BindingSource movieRentalsBindingSource;
+        private ExamenDotNETAdvancedDataSetTableAdapters.Movie_RentalsTableAdapter movie_RentalsTableAdapter;
+        private System.Windows.Forms.BindingSource rentalBindingSource;
+        private ExamenDotNETAdvancedDataSetTableAdapters.RentalTableAdapter rentalTableAdapter;
     }
 }
