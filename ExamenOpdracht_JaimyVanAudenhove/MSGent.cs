@@ -129,9 +129,9 @@ namespace ExamenOpdracht_JaimyVanAudenhove
         {
             var senderGrid = (DataGridView)sender;
             var FirstCell = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            var MovieNameCell = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
             var RatingCell = Convert.ToInt32(dataGridView1.CurrentRow.Cells[2].Value);
             var AantalBeschikbaarCell = Convert.ToInt32(dataGridView1.CurrentRow.Cells[4].Value);
-            //var FirstCell = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
 
             if (AantalBeschikbaarCell > 0)
             {
@@ -153,7 +153,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove
                             cmd = new SqlCommand("UPDATE Movies SET Amount_Gent = Amount_Gent - 1 WHERE MovieId ='" + FirstCell + "'", cn);
                             cmd.Parameters.AddWithValue("Amount_Gent", AantalBeschikbaarCell - 1);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Movie" + FirstCell, "Geleend!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Je hebt" + MovieNameCell + "Geleend! Breng de film zeker op tijd terug!", MovieNameCell + " Geleend", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             //Rental query
                             cmd = new SqlCommand("insert into Rental values(@Rental_Date,@Rental_Expiry,@username)", cn);
                             cmd.Parameters.AddWithValue("Rental_Date", today.ToString("yyyy-MM-dd"));

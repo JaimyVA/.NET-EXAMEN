@@ -68,8 +68,8 @@
             // locatieSelectToolStripMenuItem
             // 
             this.locatieSelectToolStripMenuItem.Name = "locatieSelectToolStripMenuItem";
-            this.locatieSelectToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.locatieSelectToolStripMenuItem.Text = "terug naar Locatie select";
+            this.locatieSelectToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.locatieSelectToolStripMenuItem.Text = "Terug naar Locatie select";
             this.locatieSelectToolStripMenuItem.Click += new System.EventHandler(this.locatieSelectToolStripMenuItem_Click);
             // 
             // uitloggenToolStripMenuItem

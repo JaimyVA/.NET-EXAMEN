@@ -18,6 +18,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove
         private SqlCommand cmd;
         private SqlDataReader dr;
         private SqlConnection cn;
+        
 
         public MSGeleendeFilms()
         {
@@ -131,18 +132,36 @@ namespace ExamenOpdracht_JaimyVanAudenhove
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            var RentalIdCell = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            var FilmNameCell = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
+            //Rental Date calculation
+            var RentalDateCell = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[3].Value);
+            var RentalExpiryCell = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[4].Value);
 
-            //Return Movie Query
-            //cmd = new SqlCommand("DELETE Rental.Rental_Id, Rental.Rental_Date, Rental.Rental_Expiry, Movie_Rentals.RentalId, Movie_Rentals.MoevieId FROM Rental inner join Movie_Rentals on Rental.Rental_Id = Movie_Rentals.RentalId WHERE Rental_Id = '" + RentalIdCell + "'", cn);
-            //cmd = new SqlCommand("DELETE Rental.Rental_Id, Rental.Rental_Date, Rental.Rental_Expiry, Movie_Rentals.MovieId FROM Rental inner join Movie_Rentals on Rental.Rental_Id = Movie_Rentals.RentalId WHERE Rental_Id = '" + RentalIdCell + "'", cn);
-            cmd = new SqlCommand("DELETE FROM Movie_Rentals Where RentalId = '" + RentalIdCell + "'; DELETE FROM  Rental Where Rental_Id = '" + RentalIdCell + "'", cn);
-            dr = cmd.ExecuteReader();
-            dr.Close();
-            cmd.ExecuteNonQuery();
-            this.BindGrid();
-            MessageBox.Show("Bedankt dat je " + FilmNameCell + " Terug hebt teruggebracht!");
+            int result = DateTime.Compare(RentalDateCell, RentalExpiryCell);
+
+            if (result < 0)
+            {
+                var RentalIdCell = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                var FilmNameCell = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
+                //Return Movie op tijd
+                cmd = new SqlCommand("DELETE FROM Movie_Rentals Where RentalId = '" + RentalIdCell + "'; DELETE FROM  Rental Where Rental_Id = '" + RentalIdCell + "'", cn);
+                dr = cmd.ExecuteReader();
+                dr.Close();
+                cmd.ExecuteNonQuery();
+                this.BindGrid();
+                MessageBox.Show("Bedankt dat je " + FilmNameCell + " op tijd hebt teruggebracht!");
+            }
+            else
+            {
+                var RentalIdCell = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                var FilmNameCell = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
+                //Return Movie te laat
+                cmd = new SqlCommand("DELETE FROM Movie_Rentals Where RentalId = '" + RentalIdCell + "'; DELETE FROM  Rental Where Rental_Id = '" + RentalIdCell + "'", cn);
+                dr = cmd.ExecuteReader();
+                dr.Close();
+                cmd.ExecuteNonQuery();
+                this.BindGrid();
+                MessageBox.Show("Bedankt dat je " + FilmNameCell + " hebt teruggebracht, je bent wel TE LAAT!");
+            }
         }
     }
 }
