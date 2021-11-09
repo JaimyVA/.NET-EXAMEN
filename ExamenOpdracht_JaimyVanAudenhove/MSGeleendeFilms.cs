@@ -96,7 +96,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove
             dataGridView1.DataSource = null;
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT Rental.Rental_Id, Rental.Rental_Date, Rental.Rental_Expiry, Movie_Rentals.MovieId, Movies.Name FROM Rentalinner join Movie_Rentals on Rental.Rental_Id=Movie_Rentals.RentalId inner join Movies on Movie_Rentals.MovieId=Movies.MovieId WHERE username='" + MSLogin.SetValueForUserName + "'", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT Rental.Rental_Id, Rental.Rental_Date, Rental.Rental_Expiry, Movie_Rentals.MovieId, Movies.Name FROM Rental inner join Movie_Rentals on Rental.Rental_Id=Movie_Rentals.RentalId inner join Movies on Movie_Rentals.MovieId=Movies.MovieId WHERE username='" + MSLogin.SetValueForUserName + "'", con))
                 {
                     cmd.CommandType = CommandType.Text;
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
@@ -120,9 +120,5 @@ namespace ExamenOpdracht_JaimyVanAudenhove
             dataGridView1.Columns.Insert(5, TerugBrengen);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
