@@ -49,5 +49,12 @@ namespace ExamenOpdracht_JaimyVanAudenhove
             this.Hide();
             BackToLogin.Show();
         }
+
+        private void lbGeleendeFilmsHome_Click(object sender, EventArgs e)
+        {
+            var HomescreenToGeleendeFilms = new MSGeleendeFilms();
+            this.Hide();
+            HomescreenToGeleendeFilms.Show();
+        }
     }
 }

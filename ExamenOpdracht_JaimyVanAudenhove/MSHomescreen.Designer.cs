@@ -37,6 +37,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.movieStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uitloggenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbGeleendeFilmsHome = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,11 +132,24 @@
             this.uitloggenToolStripMenuItem.Text = "Uitloggen";
             this.uitloggenToolStripMenuItem.Click += new System.EventHandler(this.uitloggenToolStripMenuItem_Click);
             // 
+            // lbGeleendeFilmsHome
+            // 
+            this.lbGeleendeFilmsHome.AutoSize = true;
+            this.lbGeleendeFilmsHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGeleendeFilmsHome.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lbGeleendeFilmsHome.Location = new System.Drawing.Point(311, 378);
+            this.lbGeleendeFilmsHome.Name = "lbGeleendeFilmsHome";
+            this.lbGeleendeFilmsHome.Size = new System.Drawing.Size(162, 17);
+            this.lbGeleendeFilmsHome.TabIndex = 6;
+            this.lbGeleendeFilmsHome.Text = "Geleende Films bekijken";
+            this.lbGeleendeFilmsHome.Click += new System.EventHandler(this.lbGeleendeFilmsHome_Click);
+            // 
             // MSHomescreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(787, 443);
+            this.Controls.Add(this.lbGeleendeFilmsHome);
             this.Controls.Add(this.btnLocatie3Home);
             this.Controls.Add(this.btnLocatie2Home);
             this.Controls.Add(this.btnLocatie1Home);
@@ -164,5 +178,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem movieStoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uitloggenToolStripMenuItem;
+        private System.Windows.Forms.Label lbGeleendeFilmsHome;
     }
 }

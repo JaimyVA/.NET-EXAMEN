@@ -99,6 +99,12 @@
     <Compile Include="MSBrussel.Designer.cs">
       <DependentUpon>MSBrussel.cs</DependentUpon>
     </Compile>
+    <Compile Include="MSGeleendeFilms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSGeleendeFilms.Designer.cs">
+      <DependentUpon>MSGeleendeFilms.cs</DependentUpon>
+    </Compile>
     <Compile Include="MSHomescreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MSBrussel.resx">
       <DependentUpon>MSBrussel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSGeleendeFilms.resx">
+      <DependentUpon>MSGeleendeFilms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MSHomescreen.resx">
       <DependentUpon>MSHomescreen.cs</DependentUpon>
