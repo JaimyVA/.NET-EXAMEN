@@ -27,7 +27,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove
             cn = new SqlConnection(@"Data Source=jaimy.database.windows.net;Initial Catalog=ExamenDotNETAdvanced;Persist Security Info=True;User ID=jaimy;Password=DotNetExamen1");
             cn.Open();
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT Id, username, password, DOB FROM Users WHERE username ='" + MSLogin.SetValueForUserName + "'")) 
+                using (SqlCommand cmd = new SqlCommand("SELECT Id, username, password, DOB, Strikes FROM Users WHERE username ='" + MSLogin.SetValueForUserName + "'")) 
                 {
                     cmd.CommandType = CommandType.Text;
                     cmd.Connection = cn;
@@ -37,6 +37,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove
                         DateTime dob = (DateTime)sdr["DOB"];
                         tbUserNameAccount.Text = sdr["username"].ToString();
                         tbPasswordAccount.Text = sdr["password"].ToString();
+                        lbStrikesAccount.Text = "Aantal Srtikes: " + sdr["Strikes"].ToString();
                         dateTimePickerGeboortedatumAccount.Value = dob;
                     }
                 }
@@ -59,17 +60,11 @@ namespace ExamenOpdracht_JaimyVanAudenhove
 
         private void btnChangeAccount_Click(object sender, EventArgs e)
         {
-            string olduser = tbUserNameAccount.Text;
             if (tbPasswordAccount.Text != string.Empty || tbUserNameAccount.Text != string.Empty || dateTimePickerGeboortedatumAccount.Text != String.Empty)
             {
                 cmd = new SqlCommand("select * from Users where username='" + tbUserNameAccount.Text + "'", cn);
                 dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    dr.Close();
-                    MessageBox.Show("Deze gebruikersnaam bestaat al, probeer een andere", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
+                if (tbUserNameAccount.Text == MSLogin.SetValueForUserName)
                 {
                     dr.Close();
                     cmd = new SqlCommand("UPDATE Users SET [username] = @username, [password] = @password, [DOB] = @DOB WHERE username='" + MSLogin.SetValueForUserName + "'", cn);
@@ -82,6 +77,28 @@ namespace ExamenOpdracht_JaimyVanAudenhove
                     this.Hide();
                     BackToLogin.Show();
                 }
+                else
+                {
+                    if (dr.Read())
+                    {
+                        dr.Close();
+                        MessageBox.Show("Deze gebruikersnaam bestaat al, probeer een andere", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        dr.Close();
+                        cmd = new SqlCommand("UPDATE Users SET [username] = @username, [password] = @password, [DOB] = @DOB WHERE username='" + MSLogin.SetValueForUserName + "'", cn);
+                        cmd.Parameters.AddWithValue("username", tbUserNameAccount.Text);
+                        cmd.Parameters.AddWithValue("password", tbPasswordAccount.Text);
+                        cmd.Parameters.AddWithValue("DOB", dateTimePickerGeboortedatumAccount.Value.ToString("yyyy-MM-dd"));
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Account aangepast! je wordt nu teruggestuurd naar login.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        var BackToLogin = new MSLogin();
+                        this.Hide();
+                        BackToLogin.Show();
+                    }
+                }
+
             }
             else
             {

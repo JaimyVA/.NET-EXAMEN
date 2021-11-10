@@ -160,7 +160,12 @@ namespace ExamenOpdracht_JaimyVanAudenhove
                 dr.Close();
                 cmd.ExecuteNonQuery();
                 this.BindGrid();
-                MessageBox.Show("Bedankt dat je " + FilmNameCell + " hebt teruggebracht, je bent wel TE LAAT!");
+                cmd = new SqlCommand("UPDATE Users SET Strikes = Strikes + 1 WHERE username ='" + MSLogin.SetValueForUserName + "'", cn);
+                dr = cmd.ExecuteReader();
+                dr.Close();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Bedankt dat je " + FilmNameCell + " hebt teruggebracht, je bent wel TE LAAT! Er wordt 1 strike aan je account toegevoegd");
+
             }
         }
 

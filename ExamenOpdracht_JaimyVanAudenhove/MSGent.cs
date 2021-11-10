@@ -132,6 +132,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove
             var MovieNameCell = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
             var RatingCell = Convert.ToInt32(dataGridView1.CurrentRow.Cells[2].Value);
             var AantalBeschikbaarCell = Convert.ToInt32(dataGridView1.CurrentRow.Cells[4].Value);
+            var LeentijdCell = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value);
 
             if (AantalBeschikbaarCell > 0)
             {
@@ -183,11 +184,11 @@ namespace ExamenOpdracht_JaimyVanAudenhove
                                                     cmd = new SqlCommand("UPDATE Movies SET Amount_Gent = Amount_Gent - 1 WHERE MovieId ='" + FirstCell + "'", cn);
                                                     cmd.Parameters.AddWithValue("Amount_Gent", AantalBeschikbaarCell - 1);
                                                     cmd.ExecuteNonQuery();
-                                                    MessageBox.Show("Je hebt" + MovieNameCell + "Geleend! Breng de film zeker op tijd terug!", MovieNameCell + " Geleend", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                    MessageBox.Show("Je hebt " + MovieNameCell + " Geleend! Breng de film zeker op tijd terug!", MovieNameCell + " Geleend", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                     //Rental query
                                                     cmd = new SqlCommand("insert into Rental values(@Rental_Date,@Rental_Expiry,@username)", cn);
                                                     cmd.Parameters.AddWithValue("Rental_Date", today.ToString("yyyy-MM-dd"));
-                                                    cmd.Parameters.AddWithValue("Rental_Expiry", today.AddDays(7));
+                                                    cmd.Parameters.AddWithValue("Rental_Expiry", today.AddDays(LeentijdCell));
                                                     cmd.Parameters.AddWithValue("username", MSLogin.SetValueForUserName);
                                                     cmd.ExecuteNonQuery();
                                                     //Movie_Rentals query

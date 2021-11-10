@@ -116,8 +116,9 @@
             // lbStrikesAccount
             // 
             this.lbStrikesAccount.AutoSize = true;
+            this.lbStrikesAccount.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbStrikesAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStrikesAccount.Location = new System.Drawing.Point(111, 233);
+            this.lbStrikesAccount.Location = new System.Drawing.Point(0, 242);
             this.lbStrikesAccount.Name = "lbStrikesAccount";
             this.lbStrikesAccount.Size = new System.Drawing.Size(46, 17);
             this.lbStrikesAccount.TabIndex = 23;
