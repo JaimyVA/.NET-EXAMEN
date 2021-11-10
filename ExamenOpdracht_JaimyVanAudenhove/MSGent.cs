@@ -179,5 +179,12 @@ namespace ExamenOpdracht_JaimyVanAudenhove
             }
             this.BindGrid();
         }
+
+        private void accountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var HomescreenToAccount = new Account();
+            this.Hide();
+            HomescreenToAccount.Show();
+        }
     }
 }

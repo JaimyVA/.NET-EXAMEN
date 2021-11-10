@@ -20,3 +20,4 @@ C:\Users\jaimy\source\repos\ExamenOpdracht_JaimyVanAudenhove\ExamenOpdracht_Jaim
 C:\Users\jaimy\source\repos\ExamenOpdracht_JaimyVanAudenhove\ExamenOpdracht_JaimyVanAudenhove\obj\Debug\ExamenOpdracht_JaimyVanAudenhove.MSAntwerpen.resources
 C:\Users\jaimy\source\repos\ExamenOpdracht_JaimyVanAudenhove\ExamenOpdracht_JaimyVanAudenhove\obj\Debug\ExamenOpdracht_JaimyVanAudenhove.MSBrussel.resources
 C:\Users\jaimy\source\repos\ExamenOpdracht_JaimyVanAudenhove\ExamenOpdracht_JaimyVanAudenhove\obj\Debug\ExamenOpdracht_JaimyVanAudenhove.MSGeleendeFilms.resources
+C:\Users\jaimy\source\repos\ExamenOpdracht_JaimyVanAudenhove\ExamenOpdracht_JaimyVanAudenhove\obj\Debug\ExamenOpdracht_JaimyVanAudenhove.Account.resources

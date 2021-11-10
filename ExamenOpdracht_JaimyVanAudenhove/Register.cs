@@ -40,13 +40,17 @@ namespace ExamenOpdracht_JaimyVanAudenhove
                         else
                         {
                             dr.Close();
-                            cmd = new SqlCommand("insert into Users values(@username,@password,@DOB)", cn);
+                            cmd = new SqlCommand("insert into Users values(@username,@password,@DOB, @Strikes)", cn);
                             cmd.Parameters.AddWithValue("username", tbUserNameRegister.Text);
                             cmd.Parameters.AddWithValue("password", tbPasswordRegister.Text);
                             cmd.Parameters.AddWithValue("DOB", dateTimePickerGeboortedatumRegister.Value.ToString("yyyy-MM-dd"));
+                            cmd.Parameters.AddWithValue("Strikes", 0);
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("Account aangemaakt! Je kan nu inloggen.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                            var BackToLogin = new MSLogin();
+                            this.Hide();
+                            BackToLogin.Show();
+                        }
                 }
                 else
                 {

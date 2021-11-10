@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.movieStoreToolStripMenuMovieStore = new System.Windows.Forms.ToolStripMenuItem();
             this.LocatieSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uitloggenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.examenDotNETAdvancedDataSet = new ExamenOpdracht_JaimyVanAudenhove.ExamenDotNETAdvancedDataSet();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new ExamenOpdracht_JaimyVanAudenhove.ExamenDotNETAdvancedDataSetTableAdapters.UsersTableAdapter();
@@ -50,7 +51,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.moviesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.uitloggenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.examenDotNETAdvancedDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
@@ -76,6 +77,7 @@
             // 
             this.movieStoreToolStripMenuMovieStore.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LocatieSelectToolStripMenuItem,
+            this.accountToolStripMenuItem,
             this.uitloggenToolStripMenuItem});
             this.movieStoreToolStripMenuMovieStore.Name = "movieStoreToolStripMenuMovieStore";
             this.movieStoreToolStripMenuMovieStore.Size = new System.Drawing.Size(79, 20);
@@ -87,6 +89,13 @@
             this.LocatieSelectToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.LocatieSelectToolStripMenuItem.Text = "Terug naar Locatie select";
             this.LocatieSelectToolStripMenuItem.Click += new System.EventHandler(this.LocatieSelectToolStripMenuItem_Click);
+            // 
+            // uitloggenToolStripMenuItem
+            // 
+            this.uitloggenToolStripMenuItem.Name = "uitloggenToolStripMenuItem";
+            this.uitloggenToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.uitloggenToolStripMenuItem.Text = "Uitloggen";
+            this.uitloggenToolStripMenuItem.Click += new System.EventHandler(this.uitloggenToolStripMenuItem_Click);
             // 
             // examenDotNETAdvancedDataSet
             // 
@@ -202,12 +211,12 @@
             this.moviesBindingSource2.DataMember = "Movies";
             this.moviesBindingSource2.DataSource = this.examenDotNETAdvancedDataSetBindingSource;
             // 
-            // uitloggenToolStripMenuItem
+            // accountToolStripMenuItem
             // 
-            this.uitloggenToolStripMenuItem.Name = "uitloggenToolStripMenuItem";
-            this.uitloggenToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.uitloggenToolStripMenuItem.Text = "Uitloggen";
-            this.uitloggenToolStripMenuItem.Click += new System.EventHandler(this.uitloggenToolStripMenuItem_Click);
+            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.accountToolStripMenuItem.Text = "Account";
+            this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
             // 
             // MSGent
             // 
@@ -260,5 +269,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn amountGentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Lenen;
         private System.Windows.Forms.ToolStripMenuItem uitloggenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
     }
 }

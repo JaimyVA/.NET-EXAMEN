@@ -38,6 +38,7 @@
             this.movieStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uitloggenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbGeleendeFilmsHome = new System.Windows.Forms.Label();
+            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             // 
             this.lbKiesWinkelHomepage.AutoSize = true;
             this.lbKiesWinkelHomepage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKiesWinkelHomepage.Location = new System.Drawing.Point(313, 93);
+            this.lbKiesWinkelHomepage.Location = new System.Drawing.Point(313, 96);
             this.lbKiesWinkelHomepage.Name = "lbKiesWinkelHomepage";
             this.lbKiesWinkelHomepage.Size = new System.Drawing.Size(160, 17);
             this.lbKiesWinkelHomepage.TabIndex = 1;
@@ -120,6 +121,7 @@
             // movieStoreToolStripMenuItem
             // 
             this.movieStoreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.accountToolStripMenuItem,
             this.uitloggenToolStripMenuItem});
             this.movieStoreToolStripMenuItem.Name = "movieStoreToolStripMenuItem";
             this.movieStoreToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
@@ -128,7 +130,7 @@
             // uitloggenToolStripMenuItem
             // 
             this.uitloggenToolStripMenuItem.Name = "uitloggenToolStripMenuItem";
-            this.uitloggenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uitloggenToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.uitloggenToolStripMenuItem.Text = "Uitloggen";
             this.uitloggenToolStripMenuItem.Click += new System.EventHandler(this.uitloggenToolStripMenuItem_Click);
             // 
@@ -143,6 +145,13 @@
             this.lbGeleendeFilmsHome.TabIndex = 6;
             this.lbGeleendeFilmsHome.Text = "Geleende Films bekijken";
             this.lbGeleendeFilmsHome.Click += new System.EventHandler(this.lbGeleendeFilmsHome_Click);
+            // 
+            // accountToolStripMenuItem
+            // 
+            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.accountToolStripMenuItem.Text = "Account";
+            this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
             // 
             // MSHomescreen
             // 
@@ -179,5 +188,6 @@
         private System.Windows.Forms.ToolStripMenuItem movieStoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uitloggenToolStripMenuItem;
         private System.Windows.Forms.Label lbGeleendeFilmsHome;
+        private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
     }
 }

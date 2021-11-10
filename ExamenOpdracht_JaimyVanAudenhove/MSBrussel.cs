@@ -30,5 +30,12 @@ namespace ExamenOpdracht_JaimyVanAudenhove
             this.Hide();
             BackToLogin.Show();
         }
+
+        private void accountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var HomescreenToAccount = new Account();
+            this.Hide();
+            HomescreenToAccount.Show();
+        }
     }
 }

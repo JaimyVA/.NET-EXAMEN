@@ -32,6 +32,7 @@
             this.movieStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.locatieSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uitloggenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             // 
             this.movieStoreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.locatieSelectToolStripMenuItem,
+            this.accountToolStripMenuItem,
             this.uitloggenToolStripMenuItem});
             this.movieStoreToolStripMenuItem.Name = "movieStoreToolStripMenuItem";
             this.movieStoreToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
@@ -67,6 +69,13 @@
             this.uitloggenToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.uitloggenToolStripMenuItem.Text = "Uitloggen";
             this.uitloggenToolStripMenuItem.Click += new System.EventHandler(this.uitloggenToolStripMenuItem_Click);
+            // 
+            // accountToolStripMenuItem
+            // 
+            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.accountToolStripMenuItem.Text = "Account";
+            this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
             // 
             // MSAntwerpen
             // 
@@ -90,5 +99,6 @@
         private System.Windows.Forms.ToolStripMenuItem movieStoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem locatieSelectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uitloggenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
     }
 }

@@ -163,5 +163,12 @@ namespace ExamenOpdracht_JaimyVanAudenhove
                 MessageBox.Show("Bedankt dat je " + FilmNameCell + " hebt teruggebracht, je bent wel TE LAAT!");
             }
         }
+
+        private void accountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var GeleendToAccount = new Account();
+            this.Hide();
+            GeleendToAccount.Show();
+        }
     }
 }
