@@ -135,50 +135,86 @@ namespace ExamenOpdracht_JaimyVanAudenhove
 
             if (AantalBeschikbaarCell > 0)
             {
-                //user DOB Query
-                using (SqlCommand sqlCommand = new SqlCommand("select DOB from Users where username='" + MSLogin.SetValueForUserName + "'", cn))
+                //Check User strikes
+                using (SqlCommand sqlCommand = new SqlCommand("select Strikes from Users where username='" + MSLogin.SetValueForUserName + "'", cn))
                 {
                     sqlCommand.CommandType = CommandType.Text;
                     sqlCommand.Connection = cn;
                     using (SqlDataReader sdr = sqlCommand.ExecuteReader())
                     {
                         sdr.Read();
-                        DateTime dob = (DateTime)sdr["DOB"];
-                        if(today.Year - dob.Year > RatingCell)
+                        int UserStrikes = (int)sdr["Strikes"];
+                        if (UserStrikes >= 3)
                         {
-                            //Movie update query
-                            cmd = new SqlCommand("select * from Movies where Name='" + FirstCell + "'", cn);
-                            dr = cmd.ExecuteReader();
-                            dr.Close();
-                            cmd = new SqlCommand("UPDATE Movies SET Amount_Gent = Amount_Gent - 1 WHERE MovieId ='" + FirstCell + "'", cn);
-                            cmd.Parameters.AddWithValue("Amount_Gent", AantalBeschikbaarCell - 1);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Je hebt" + MovieNameCell + "Geleend! Breng de film zeker op tijd terug!", MovieNameCell + " Geleend", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            //Rental query
-                            cmd = new SqlCommand("insert into Rental values(@Rental_Date,@Rental_Expiry,@username)", cn);
-                            cmd.Parameters.AddWithValue("Rental_Date", today.ToString("yyyy-MM-dd"));
-                            cmd.Parameters.AddWithValue("Rental_Expiry", today.AddDays(7));
-                            cmd.Parameters.AddWithValue("username", MSLogin.SetValueForUserName);
-                            cmd.ExecuteNonQuery();
-                            //Movie_Rentals query
-                            cmd = new SqlCommand("insert into Movie_Rentals values(@MovieId)", cn);
-                            cmd.Parameters.AddWithValue("MovieId", FirstCell);
-                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Je bent verbannen van de MovieStore omdat je meermaals films niet op tijd terugbracht!");
                         }
                         else
                         {
-                            MessageBox.Show("Je bent te jong voor deze film");
+                            //Check if user is currently renting a movie
+                            using (SqlCommand sqlCommandCurrentlyRenting = new SqlCommand("select * from Rental where username='" + MSLogin.SetValueForUserName + "'", cn))
+                            {
+                                sqlCommandCurrentlyRenting.CommandType = CommandType.Text;
+                                sqlCommandCurrentlyRenting.Connection = cn;
+                                using (SqlDataReader sdrCurrentlyRenting = sqlCommandCurrentlyRenting.ExecuteReader())
+                                {
+                                    if(sdrCurrentlyRenting.Read())
+                                    {
+                                        sdrCurrentlyRenting.Close();
+                                        MessageBox.Show("Je leent al een film, breng deze eerst terug!");
+                                    }
+                                    else
+                                    {
+                                        sdrCurrentlyRenting.Close();
+                                        //user DOB Query
+                                        using (SqlCommand sqlCommand1 = new SqlCommand("select DOB from Users where username='" + MSLogin.SetValueForUserName + "'", cn))
+                                        {
+                                            sqlCommand1.CommandType = CommandType.Text;
+                                            sqlCommand1.Connection = cn;
+                                            using (SqlDataReader sdr1 = sqlCommand1.ExecuteReader())
+                                            {
+                                                sdr1.Read();
+                                                DateTime dob = (DateTime)sdr1["DOB"];
+                                                if (today.Year - dob.Year > RatingCell)
+                                                {
+                                                    //Movie update query
+                                                    cmd = new SqlCommand("select * from Movies where Name='" + FirstCell + "'", cn);
+                                                    dr = cmd.ExecuteReader();
+                                                    dr.Close();
+                                                    cmd = new SqlCommand("UPDATE Movies SET Amount_Gent = Amount_Gent - 1 WHERE MovieId ='" + FirstCell + "'", cn);
+                                                    cmd.Parameters.AddWithValue("Amount_Gent", AantalBeschikbaarCell - 1);
+                                                    cmd.ExecuteNonQuery();
+                                                    MessageBox.Show("Je hebt" + MovieNameCell + "Geleend! Breng de film zeker op tijd terug!", MovieNameCell + " Geleend", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                    //Rental query
+                                                    cmd = new SqlCommand("insert into Rental values(@Rental_Date,@Rental_Expiry,@username)", cn);
+                                                    cmd.Parameters.AddWithValue("Rental_Date", today.ToString("yyyy-MM-dd"));
+                                                    cmd.Parameters.AddWithValue("Rental_Expiry", today.AddDays(7));
+                                                    cmd.Parameters.AddWithValue("username", MSLogin.SetValueForUserName);
+                                                    cmd.ExecuteNonQuery();
+                                                    //Movie_Rentals query
+                                                    cmd = new SqlCommand("insert into Movie_Rentals values(@MovieId)", cn);
+                                                    cmd.Parameters.AddWithValue("MovieId", FirstCell);
+                                                    cmd.ExecuteNonQuery();
+                                                }
+                                                else
+                                                {
+                                                    MessageBox.Show("Je bent te jong voor deze film");
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
-
                 }
-            }
-            else
-            {
-                MessageBox.Show("Deze Film is momenteel niet meer beschikbaar");
-            }
-            this.BindGrid();
-        }
+             }
+             else
+             {
+                 MessageBox.Show("Deze Film is momenteel niet meer beschikbaar");
+             }
+             this.BindGrid();
+         }
 
         private void accountToolStripMenuItem_Click(object sender, EventArgs e)
         {
