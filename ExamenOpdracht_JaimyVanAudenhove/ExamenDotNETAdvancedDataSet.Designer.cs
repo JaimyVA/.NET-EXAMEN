@@ -413,6 +413,8 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
             
             private global::System.Data.DataColumn columnDOB;
             
+            private global::System.Data.DataColumn columnStrikes;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public UsersDataTable() {
@@ -480,6 +482,14 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn StrikesColumn {
+                get {
+                    return this.columnStrikes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -515,13 +525,14 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UsersRow AddUsersRow(string username, string password, System.DateTime DOB) {
+            public UsersRow AddUsersRow(string username, string password, System.DateTime DOB, int Strikes) {
                 UsersRow rowUsersRow = ((UsersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         username,
                         password,
-                        DOB};
+                        DOB,
+                        Strikes};
                 rowUsersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsersRow);
                 return rowUsersRow;
@@ -555,6 +566,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
                 this.columnusername = base.Columns["username"];
                 this.columnpassword = base.Columns["password"];
                 this.columnDOB = base.Columns["DOB"];
+                this.columnStrikes = base.Columns["Strikes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -568,6 +580,8 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
                 base.Columns.Add(this.columnpassword);
                 this.columnDOB = new global::System.Data.DataColumn("DOB", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDOB);
+                this.columnStrikes = new global::System.Data.DataColumn("Strikes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStrikes);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -581,6 +595,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
                 this.columnpassword.AllowDBNull = false;
                 this.columnpassword.MaxLength = 60;
                 this.columnDOB.AllowDBNull = false;
+                this.columnStrikes.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -728,6 +743,8 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
             
             private global::System.Data.DataColumn columnAmount_Antwerpen;
             
+            private global::System.Data.DataColumn columnReturned;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public MoviesDataTable() {
@@ -819,6 +836,14 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ReturnedColumn {
+                get {
+                    return this.columnReturned;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -854,7 +879,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public MoviesRow AddMoviesRow(string Name, int Rating, int Rental_Duration, int Amount_Gent, int Amount_Brussel, int Amount_Antwerpen) {
+            public MoviesRow AddMoviesRow(string Name, int Rating, int Rental_Duration, int Amount_Gent, int Amount_Brussel, int Amount_Antwerpen, int Returned) {
                 MoviesRow rowMoviesRow = ((MoviesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -863,7 +888,8 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
                         Rental_Duration,
                         Amount_Gent,
                         Amount_Brussel,
-                        Amount_Antwerpen};
+                        Amount_Antwerpen,
+                        Returned};
                 rowMoviesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMoviesRow);
                 return rowMoviesRow;
@@ -900,6 +926,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
                 this.columnAmount_Gent = base.Columns["Amount_Gent"];
                 this.columnAmount_Brussel = base.Columns["Amount_Brussel"];
                 this.columnAmount_Antwerpen = base.Columns["Amount_Antwerpen"];
+                this.columnReturned = base.Columns["Returned"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -919,6 +946,8 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
                 base.Columns.Add(this.columnAmount_Brussel);
                 this.columnAmount_Antwerpen = new global::System.Data.DataColumn("Amount_Antwerpen", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount_Antwerpen);
+                this.columnReturned = new global::System.Data.DataColumn("Returned", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReturned);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMovieId}, true));
                 this.columnMovieId.AutoIncrement = true;
@@ -934,6 +963,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
                 this.columnAmount_Gent.AllowDBNull = false;
                 this.columnAmount_Brussel.AllowDBNull = false;
                 this.columnAmount_Antwerpen.AllowDBNull = false;
+                this.columnReturned.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1699,6 +1729,17 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Strikes {
+                get {
+                    return ((int)(this[this.tableUsers.StrikesColumn]));
+                }
+                set {
+                    this[this.tableUsers.StrikesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public RentalRow[] GetRentalRows() {
                 if ((this.Table.ChildRelations["FK_Users_ToMovies"] == null)) {
                     return new RentalRow[0];
@@ -1797,6 +1838,17 @@ namespace ExamenOpdracht_JaimyVanAudenhove {
                 }
                 set {
                     this[this.tableMovies.Amount_AntwerpenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Returned {
+                get {
+                    return ((int)(this[this.tableMovies.ReturnedColumn]));
+                }
+                set {
+                    this[this.tableMovies.ReturnedColumn] = value;
                 }
             }
             
@@ -2217,38 +2269,43 @@ namespace ExamenOpdracht_JaimyVanAudenhove.ExamenDotNETAdvancedDataSetTableAdapt
             tableMapping.ColumnMappings.Add("username", "username");
             tableMapping.ColumnMappings.Add("password", "password");
             tableMapping.ColumnMappings.Add("DOB", "DOB");
+            tableMapping.ColumnMappings.Add("Strikes", "Strikes");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Users] WHERE (([Id] = @Original_Id) AND ([username] = @Origina" +
-                "l_username) AND ([password] = @Original_password) AND ([DOB] = @Original_DOB))";
+                "l_username) AND ([password] = @Original_password) AND ([DOB] = @Original_DOB) AN" +
+                "D ([Strikes] = @Original_Strikes))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DOB", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DOB", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Strikes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Strikes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Users] ([username], [password], [DOB]) VALUES (@username, @pas" +
-                "sword, @DOB);\r\nSELECT Id, username, password, DOB FROM Users WHERE (Id = SCOPE_I" +
-                "DENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Users] ([username], [password], [DOB], [Strikes]) VALUES (@use" +
+                "rname, @password, @DOB, @Strikes);\r\nSELECT Id, username, password, DOB, Strikes " +
+                "FROM Users WHERE (username = @username)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DOB", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DOB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Strikes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Strikes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Users] SET [username] = @username, [password] = @password, [DOB] = @DOB WHERE (([Id] = @Original_Id) AND ([username] = @Original_username) AND ([password] = @Original_password) AND ([DOB] = @Original_DOB));
-SELECT Id, username, password, DOB FROM Users WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Users] SET [username] = @username, [password] = @password, [DOB] = @DOB, [Strikes] = @Strikes WHERE (([Id] = @Original_Id) AND ([username] = @Original_username) AND ([password] = @Original_password) AND ([DOB] = @Original_DOB) AND ([Strikes] = @Original_Strikes));
+SELECT Id, username, password, DOB, Strikes FROM Users WHERE (username = @username)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DOB", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DOB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Strikes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Strikes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DOB", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DOB", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Strikes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Strikes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2264,7 +2321,7 @@ SELECT Id, username, password, DOB FROM Users WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, username, password, DOB FROM dbo.Users";
+            this._commandCollection[0].CommandText = "SELECT Id, username, password, DOB, Strikes FROM dbo.Users";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2325,7 +2382,7 @@ SELECT Id, username, password, DOB FROM Users WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_username, string Original_password, System.DateTime Original_DOB) {
+        public virtual int Delete(int Original_Id, string Original_username, string Original_password, System.DateTime Original_DOB, int Original_Strikes) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_username == null)) {
                 throw new global::System.ArgumentNullException("Original_username");
@@ -2340,6 +2397,7 @@ SELECT Id, username, password, DOB FROM Users WHERE (Id = @Id)";
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_password));
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_DOB));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Strikes));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2360,7 +2418,7 @@ SELECT Id, username, password, DOB FROM Users WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string username, string password, System.DateTime DOB) {
+        public virtual int Insert(string username, string password, System.DateTime DOB, int Strikes) {
             if ((username == null)) {
                 throw new global::System.ArgumentNullException("username");
             }
@@ -2374,6 +2432,7 @@ SELECT Id, username, password, DOB FROM Users WHERE (Id = @Id)";
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(password));
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DOB));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Strikes));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2394,7 +2453,7 @@ SELECT Id, username, password, DOB FROM Users WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string username, string password, System.DateTime DOB, int Original_Id, string Original_username, string Original_password, System.DateTime Original_DOB, int Id) {
+        public virtual int Update(string username, string password, System.DateTime DOB, int Strikes, int Original_Id, string Original_username, string Original_password, System.DateTime Original_DOB, int Original_Strikes) {
             if ((username == null)) {
                 throw new global::System.ArgumentNullException("username");
             }
@@ -2408,21 +2467,22 @@ SELECT Id, username, password, DOB FROM Users WHERE (Id = @Id)";
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(password));
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DOB));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Strikes));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id));
             if ((Original_username == null)) {
                 throw new global::System.ArgumentNullException("Original_username");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_username));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_username));
             }
             if ((Original_password == null)) {
                 throw new global::System.ArgumentNullException("Original_password");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_password));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_password));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_DOB));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_DOB));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Strikes));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2437,14 +2497,6 @@ SELECT Id, username, password, DOB FROM Users WHERE (Id = @Id)";
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string username, string password, System.DateTime DOB, int Original_Id, string Original_username, string Original_password, System.DateTime Original_DOB) {
-            return this.Update(username, password, DOB, Original_Id, Original_username, Original_password, Original_DOB, Original_Id);
         }
     }
     
@@ -2576,10 +2628,11 @@ SELECT Id, username, password, DOB FROM Users WHERE (Id = @Id)";
             tableMapping.ColumnMappings.Add("Amount_Gent", "Amount_Gent");
             tableMapping.ColumnMappings.Add("Amount_Brussel", "Amount_Brussel");
             tableMapping.ColumnMappings.Add("Amount_Antwerpen", "Amount_Antwerpen");
+            tableMapping.ColumnMappings.Add("Returned", "Returned");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Movies] WHERE (([MovieId] = @Original_MovieId) AND ([Name] = @Original_Name) AND ([Rating] = @Original_Rating) AND ([Rental_Duration] = @Original_Rental_Duration) AND ([Amount_Gent] = @Original_Amount_Gent) AND ([Amount_Brussel] = @Original_Amount_Brussel) AND ([Amount_Antwerpen] = @Original_Amount_Antwerpen))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Movies] WHERE (([MovieId] = @Original_MovieId) AND ([Name] = @Original_Name) AND ([Rating] = @Original_Rating) AND ([Rental_Duration] = @Original_Rental_Duration) AND ([Amount_Gent] = @Original_Amount_Gent) AND ([Amount_Brussel] = @Original_Amount_Brussel) AND ([Amount_Antwerpen] = @Original_Amount_Antwerpen) AND ([Returned] = @Original_Returned))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MovieId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MovieId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2588,10 +2641,11 @@ SELECT Id, username, password, DOB FROM Users WHERE (Id = @Id)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_Gent", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_Gent", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_Brussel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_Brussel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_Antwerpen", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_Antwerpen", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Returned", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Returned", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Movies] ([Name], [Rating], [Rental_Duration], [Amount_Gent], [Amount_Brussel], [Amount_Antwerpen]) VALUES (@Name, @Rating, @Rental_Duration, @Amount_Gent, @Amount_Brussel, @Amount_Antwerpen);
-SELECT MovieId, Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amount_Antwerpen FROM Movies WHERE (MovieId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Movies] ([Name], [Rating], [Rental_Duration], [Amount_Gent], [Amount_Brussel], [Amount_Antwerpen], [Returned]) VALUES (@Name, @Rating, @Rental_Duration, @Amount_Gent, @Amount_Brussel, @Amount_Antwerpen, @Returned);
+SELECT MovieId, Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amount_Antwerpen, Returned FROM Movies WHERE (MovieId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rating", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2599,10 +2653,11 @@ SELECT MovieId, Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amou
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_Gent", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_Gent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_Brussel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_Brussel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_Antwerpen", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_Antwerpen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Returned", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Returned", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Movies] SET [Name] = @Name, [Rating] = @Rating, [Rental_Duration] = @Rental_Duration, [Amount_Gent] = @Amount_Gent, [Amount_Brussel] = @Amount_Brussel, [Amount_Antwerpen] = @Amount_Antwerpen WHERE (([MovieId] = @Original_MovieId) AND ([Name] = @Original_Name) AND ([Rating] = @Original_Rating) AND ([Rental_Duration] = @Original_Rental_Duration) AND ([Amount_Gent] = @Original_Amount_Gent) AND ([Amount_Brussel] = @Original_Amount_Brussel) AND ([Amount_Antwerpen] = @Original_Amount_Antwerpen));
-SELECT MovieId, Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amount_Antwerpen FROM Movies WHERE (MovieId = @MovieId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Movies] SET [Name] = @Name, [Rating] = @Rating, [Rental_Duration] = @Rental_Duration, [Amount_Gent] = @Amount_Gent, [Amount_Brussel] = @Amount_Brussel, [Amount_Antwerpen] = @Amount_Antwerpen, [Returned] = @Returned WHERE (([MovieId] = @Original_MovieId) AND ([Name] = @Original_Name) AND ([Rating] = @Original_Rating) AND ([Rental_Duration] = @Original_Rental_Duration) AND ([Amount_Gent] = @Original_Amount_Gent) AND ([Amount_Brussel] = @Original_Amount_Brussel) AND ([Amount_Antwerpen] = @Original_Amount_Antwerpen) AND ([Returned] = @Original_Returned));
+SELECT MovieId, Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amount_Antwerpen, Returned FROM Movies WHERE (MovieId = @MovieId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rating", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2610,6 +2665,7 @@ SELECT MovieId, Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amou
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_Gent", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_Gent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_Brussel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_Brussel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_Antwerpen", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_Antwerpen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Returned", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Returned", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MovieId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MovieId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rating", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2617,6 +2673,7 @@ SELECT MovieId, Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amou
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_Gent", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_Gent", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_Brussel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_Brussel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_Antwerpen", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_Antwerpen", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Returned", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Returned", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MovieId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MovieId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -2694,7 +2751,7 @@ SELECT MovieId, Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amou
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_MovieId, string Original_Name, int Original_Rating, int Original_Rental_Duration, int Original_Amount_Gent, int Original_Amount_Brussel, int Original_Amount_Antwerpen) {
+        public virtual int Delete(int Original_MovieId, string Original_Name, int Original_Rating, int Original_Rental_Duration, int Original_Amount_Gent, int Original_Amount_Brussel, int Original_Amount_Antwerpen, int Original_Returned) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_MovieId));
             if ((Original_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Name");
@@ -2707,6 +2764,7 @@ SELECT MovieId, Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amou
             this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Amount_Gent));
             this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Amount_Brussel));
             this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Amount_Antwerpen));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_Returned));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2727,7 +2785,7 @@ SELECT MovieId, Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amou
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, int Rating, int Rental_Duration, int Amount_Gent, int Amount_Brussel, int Amount_Antwerpen) {
+        public virtual int Insert(string Name, int Rating, int Rental_Duration, int Amount_Gent, int Amount_Brussel, int Amount_Antwerpen, int Returned) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
@@ -2739,6 +2797,7 @@ SELECT MovieId, Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amou
             this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Amount_Gent));
             this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Amount_Brussel));
             this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Amount_Antwerpen));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Returned));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2759,7 +2818,23 @@ SELECT MovieId, Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amou
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, int Rating, int Rental_Duration, int Amount_Gent, int Amount_Brussel, int Amount_Antwerpen, int Original_MovieId, string Original_Name, int Original_Rating, int Original_Rental_Duration, int Original_Amount_Gent, int Original_Amount_Brussel, int Original_Amount_Antwerpen, int MovieId) {
+        public virtual int Update(
+                    string Name, 
+                    int Rating, 
+                    int Rental_Duration, 
+                    int Amount_Gent, 
+                    int Amount_Brussel, 
+                    int Amount_Antwerpen, 
+                    int Returned, 
+                    int Original_MovieId, 
+                    string Original_Name, 
+                    int Original_Rating, 
+                    int Original_Rental_Duration, 
+                    int Original_Amount_Gent, 
+                    int Original_Amount_Brussel, 
+                    int Original_Amount_Antwerpen, 
+                    int Original_Returned, 
+                    int MovieId) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
@@ -2771,19 +2846,21 @@ SELECT MovieId, Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amou
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Amount_Gent));
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Amount_Brussel));
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Amount_Antwerpen));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_MovieId));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Returned));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_MovieId));
             if ((Original_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Name));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Name));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Rating));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Rental_Duration));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Amount_Gent));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Amount_Brussel));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Amount_Antwerpen));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(MovieId));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Rating));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Rental_Duration));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Amount_Gent));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Amount_Brussel));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Amount_Antwerpen));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Returned));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(MovieId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2804,8 +2881,8 @@ SELECT MovieId, Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amou
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, int Rating, int Rental_Duration, int Amount_Gent, int Amount_Brussel, int Amount_Antwerpen, int Original_MovieId, string Original_Name, int Original_Rating, int Original_Rental_Duration, int Original_Amount_Gent, int Original_Amount_Brussel, int Original_Amount_Antwerpen) {
-            return this.Update(Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amount_Antwerpen, Original_MovieId, Original_Name, Original_Rating, Original_Rental_Duration, Original_Amount_Gent, Original_Amount_Brussel, Original_Amount_Antwerpen, Original_MovieId);
+        public virtual int Update(string Name, int Rating, int Rental_Duration, int Amount_Gent, int Amount_Brussel, int Amount_Antwerpen, int Returned, int Original_MovieId, string Original_Name, int Original_Rating, int Original_Rental_Duration, int Original_Amount_Gent, int Original_Amount_Brussel, int Original_Amount_Antwerpen, int Original_Returned) {
+            return this.Update(Name, Rating, Rental_Duration, Amount_Gent, Amount_Brussel, Amount_Antwerpen, Returned, Original_MovieId, Original_Name, Original_Rating, Original_Rental_Duration, Original_Amount_Gent, Original_Amount_Brussel, Original_Amount_Antwerpen, Original_Returned, Original_MovieId);
         }
     }
     

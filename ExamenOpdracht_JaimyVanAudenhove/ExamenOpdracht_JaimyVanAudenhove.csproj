@@ -61,6 +61,12 @@
     <Compile Include="Account.Designer.cs">
       <DependentUpon>Account.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.Designer.cs">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExamenDotNETAdvancedDataSet.cs">
       <DependentUpon>ExamenDotNETAdvancedDataSet.xsd</DependentUpon>
     </Compile>
@@ -93,6 +99,12 @@
     <Compile Include="Movy.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="MSAdminHomescreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSAdminHomescreen.Designer.cs">
+      <DependentUpon>MSAdminHomescreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="MSAntwerpen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +129,18 @@
     <Compile Include="MSHomescreen.Designer.cs">
       <DependentUpon>MSHomescreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="MSMoviesAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSMoviesAdmin.Designer.cs">
+      <DependentUpon>MSMoviesAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MSUsersAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSUsersAdmin.Designer.cs">
+      <DependentUpon>MSUsersAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.cs">
@@ -140,8 +164,14 @@
     <EmbeddedResource Include="Account.resx">
       <DependentUpon>Account.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminLogin.resx">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSAdminHomescreen.resx">
+      <DependentUpon>MSAdminHomescreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MSAntwerpen.resx">
       <DependentUpon>MSAntwerpen.cs</DependentUpon>
@@ -154,6 +184,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MSHomescreen.resx">
       <DependentUpon>MSHomescreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSMoviesAdmin.resx">
+      <DependentUpon>MSMoviesAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSUsersAdmin.resx">
+      <DependentUpon>MSUsersAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
