@@ -51,7 +51,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove
             int Amount_Brussel = Convert.ToInt32(Math.Round(numAmountBrussel.Value));
             int Amount_Antwerpen = Convert.ToInt32(Math.Round(numAmountAntwerpen.Value));
 
-            if (tbMovieName.Text != string.Empty || numLeentijd.Text != "" || numAmountGent.Text != "" || numAmountBrussel.Text != "" || numAmountAntwerpen.Text != "")
+            if (tbMovieName.Text != string.Empty)
             {
                 cmd = new SqlCommand("select * from Movies where Name='" + tbMovieName.Text + "'", cn);
                 dr = cmd.ExecuteReader();
