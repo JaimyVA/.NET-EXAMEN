@@ -135,6 +135,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove
             //Rental Date calculation
             var RentalDateCell = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[3].Value);
             var RentalExpiryCell = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[4].Value);
+            var FilmIdCell = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
 
             int result = DateTime.Compare(RentalDateCell, RentalExpiryCell);
 
@@ -167,6 +168,9 @@ namespace ExamenOpdracht_JaimyVanAudenhove
                 MessageBox.Show("Bedankt dat je " + FilmNameCell + " hebt teruggebracht, je bent wel TE LAAT! Er wordt 1 strike aan je account toegevoegd");
 
             }
+            cmd = new SqlCommand("UPDATE Movies SET Returned = Returned + 1 Where MovieId = '" + FilmIdCell + "'", cn);
+            dr.Close();
+            cmd.ExecuteNonQuery();
         }
 
         private void accountToolStripMenuItem_Click(object sender, EventArgs e)
