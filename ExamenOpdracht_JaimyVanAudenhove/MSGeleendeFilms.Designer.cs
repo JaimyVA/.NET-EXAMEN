@@ -32,18 +32,18 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.movieStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.locatieSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uitloggenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.rentalIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentalDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentalExpiryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.examenDotNETAdvancedDataSet = new ExamenOpdracht_JaimyVanAudenhove.ExamenDotNETAdvancedDataSet();
             this.movieRentalsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.movie_RentalsTableAdapter = new ExamenOpdracht_JaimyVanAudenhove.ExamenDotNETAdvancedDataSetTableAdapters.Movie_RentalsTableAdapter();
             this.rentalTableAdapter = new ExamenOpdracht_JaimyVanAudenhove.ExamenDotNETAdvancedDataSetTableAdapters.RentalTableAdapter();
-            this.rentalIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentalDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentalExpiryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentalBindingSource)).BeginInit();
@@ -78,6 +78,13 @@
             this.locatieSelectToolStripMenuItem.Text = "Terug naar Locatie select";
             this.locatieSelectToolStripMenuItem.Click += new System.EventHandler(this.locatieSelectToolStripMenuItem_Click);
             // 
+            // accountToolStripMenuItem
+            // 
+            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.accountToolStripMenuItem.Text = "Account";
+            this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
+            // 
             // uitloggenToolStripMenuItem
             // 
             this.uitloggenToolStripMenuItem.Name = "uitloggenToolStripMenuItem";
@@ -106,29 +113,6 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
-            // rentalBindingSource
-            // 
-            this.rentalBindingSource.DataMember = "Rental";
-            this.rentalBindingSource.DataSource = this.examenDotNETAdvancedDataSet;
-            // 
-            // examenDotNETAdvancedDataSet
-            // 
-            this.examenDotNETAdvancedDataSet.DataSetName = "ExamenDotNETAdvancedDataSet";
-            this.examenDotNETAdvancedDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // movieRentalsBindingSource
-            // 
-            this.movieRentalsBindingSource.DataMember = "Movie_Rentals";
-            this.movieRentalsBindingSource.DataSource = this.examenDotNETAdvancedDataSet;
-            // 
-            // movie_RentalsTableAdapter
-            // 
-            this.movie_RentalsTableAdapter.ClearBeforeFill = true;
-            // 
-            // rentalTableAdapter
-            // 
-            this.rentalTableAdapter.ClearBeforeFill = true;
-            // 
             // rentalIdDataGridViewTextBoxColumn
             // 
             this.rentalIdDataGridViewTextBoxColumn.DataPropertyName = "Rental_Id";
@@ -154,12 +138,28 @@
             this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
             this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
             // 
-            // accountToolStripMenuItem
+            // rentalBindingSource
             // 
-            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.accountToolStripMenuItem.Text = "Account";
-            this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
+            this.rentalBindingSource.DataMember = "Rental";
+            this.rentalBindingSource.DataSource = this.examenDotNETAdvancedDataSet;
+            // 
+            // examenDotNETAdvancedDataSet
+            // 
+            this.examenDotNETAdvancedDataSet.DataSetName = "ExamenDotNETAdvancedDataSet";
+            this.examenDotNETAdvancedDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // movieRentalsBindingSource
+            // 
+            this.movieRentalsBindingSource.DataMember = "Movie_Rentals";
+            this.movieRentalsBindingSource.DataSource = this.examenDotNETAdvancedDataSet;
+            // 
+            // movie_RentalsTableAdapter
+            // 
+            this.movie_RentalsTableAdapter.ClearBeforeFill = true;
+            // 
+            // rentalTableAdapter
+            // 
+            this.rentalTableAdapter.ClearBeforeFill = true;
             // 
             // MSGeleendeFilms
             // 
@@ -170,6 +170,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "MSGeleendeFilms";
             this.Text = "MSGeleendeFilms";
             this.Load += new System.EventHandler(this.MSGeleendeFilms_Load);

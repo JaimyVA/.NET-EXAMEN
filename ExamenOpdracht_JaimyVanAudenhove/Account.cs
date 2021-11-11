@@ -26,6 +26,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove
         {
             cn = new SqlConnection(@"Data Source=jaimy.database.windows.net;Initial Catalog=ExamenDotNETAdvanced;Persist Security Info=True;User ID=jaimy;Password=DotNetExamen1");
             cn.Open();
+            dateTimePickerGeboortedatumAccount.MaxDate = DateTime.Now;
             {
                 using (SqlCommand cmd = new SqlCommand("SELECT Id, username, password, DOB, Strikes FROM Users WHERE username ='" + MSLogin.SetValueForUserName + "'")) 
                 {

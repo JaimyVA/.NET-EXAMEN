@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.movieStoreToolStripMenuMovieStore = new System.Windows.Forms.ToolStripMenuItem();
             this.LocatieSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uitloggenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.examenDotNETAdvancedDataSet = new ExamenOpdracht_JaimyVanAudenhove.ExamenDotNETAdvancedDataSet();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -51,7 +52,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.moviesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.examenDotNETAdvancedDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
@@ -69,7 +69,7 @@
             this.movieStoreToolStripMenuMovieStore});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(744, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(761, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStripMSGent";
             // 
@@ -89,6 +89,13 @@
             this.LocatieSelectToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.LocatieSelectToolStripMenuItem.Text = "Terug naar Locatie select";
             this.LocatieSelectToolStripMenuItem.Click += new System.EventHandler(this.LocatieSelectToolStripMenuItem_Click);
+            // 
+            // accountToolStripMenuItem
+            // 
+            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.accountToolStripMenuItem.Text = "Account";
+            this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
             // 
             // uitloggenToolStripMenuItem
             // 
@@ -139,8 +146,10 @@
             this.dataGridView1.DataSource = this.moviesBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(744, 426);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(761, 426);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -184,6 +193,7 @@
             // 
             this.Lenen.HeaderText = "Deze Lenen";
             this.Lenen.Name = "Lenen";
+            this.Lenen.ReadOnly = true;
             this.Lenen.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Lenen.Text = "Lenen";
             // 
@@ -211,22 +221,16 @@
             this.moviesBindingSource2.DataMember = "Movies";
             this.moviesBindingSource2.DataSource = this.examenDotNETAdvancedDataSetBindingSource;
             // 
-            // accountToolStripMenuItem
-            // 
-            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.accountToolStripMenuItem.Text = "Account";
-            this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
-            // 
             // MSGent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 450);
+            this.ClientSize = new System.Drawing.Size(761, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "MSGent";
             this.Text = "MovieStore Gent";
             this.Load += new System.EventHandler(this.MSGent_Load);

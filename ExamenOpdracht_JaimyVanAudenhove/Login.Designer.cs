@@ -42,6 +42,7 @@
             // tbUserNameLogin
             // 
             this.tbUserNameLogin.Location = new System.Drawing.Point(73, 52);
+            this.tbUserNameLogin.MaxLength = 50;
             this.tbUserNameLogin.Name = "tbUserNameLogin";
             this.tbUserNameLogin.Size = new System.Drawing.Size(131, 20);
             this.tbUserNameLogin.TabIndex = 0;
@@ -58,6 +59,7 @@
             // tbPasswordLogin
             // 
             this.tbPasswordLogin.Location = new System.Drawing.Point(73, 104);
+            this.tbPasswordLogin.MaxLength = 50;
             this.tbPasswordLogin.Name = "tbPasswordLogin";
             this.tbPasswordLogin.PasswordChar = '*';
             this.tbPasswordLogin.Size = new System.Drawing.Size(131, 20);
@@ -125,6 +127,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "MSLogin";
             this.Text = "MovieStore Login";
             this.Load += new System.EventHandler(this.MSLogin_Load);

@@ -72,6 +72,7 @@
             // tbPasswordRegister
             // 
             this.tbPasswordRegister.Location = new System.Drawing.Point(69, 90);
+            this.tbPasswordRegister.MaxLength = 50;
             this.tbPasswordRegister.Name = "tbPasswordRegister";
             this.tbPasswordRegister.PasswordChar = '*';
             this.tbPasswordRegister.Size = new System.Drawing.Size(131, 20);
@@ -89,6 +90,7 @@
             // tbUserNameRegister
             // 
             this.tbUserNameRegister.Location = new System.Drawing.Point(69, 38);
+            this.tbUserNameRegister.MaxLength = 50;
             this.tbUserNameRegister.Name = "tbUserNameRegister";
             this.tbUserNameRegister.Size = new System.Drawing.Size(131, 20);
             this.tbUserNameRegister.TabIndex = 6;
@@ -105,6 +107,7 @@
             // dateTimePickerGeboortedatumRegister
             // 
             this.dateTimePickerGeboortedatumRegister.Location = new System.Drawing.Point(39, 141);
+            this.dateTimePickerGeboortedatumRegister.MaxDate = new System.DateTime(2021, 11, 11, 0, 0, 0, 0);
             this.dateTimePickerGeboortedatumRegister.Name = "dateTimePickerGeboortedatumRegister";
             this.dateTimePickerGeboortedatumRegister.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerGeboortedatumRegister.TabIndex = 13;
@@ -124,6 +127,7 @@
             this.Controls.Add(this.lbUserNameRegister);
             this.Controls.Add(this.tbUserNameRegister);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MSRegister";
             this.Text = "MovieStore Register";
             this.Load += new System.EventHandler(this.MSRegister_Load);

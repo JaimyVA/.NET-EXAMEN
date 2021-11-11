@@ -34,9 +34,6 @@
             this.terugNaarAdminHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uitloggenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.examenDotNETAdvancedDataSet = new ExamenOpdracht_JaimyVanAudenhove.ExamenDotNETAdvancedDataSet();
-            this.moviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.moviesTableAdapter = new ExamenOpdracht_JaimyVanAudenhove.ExamenDotNETAdvancedDataSetTableAdapters.MoviesTableAdapter();
             this.movieIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ratingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,10 +45,13 @@
             this.ReturnOneGent = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ReturnOneBrussel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ReturnOneAntwerpen = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.moviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.examenDotNETAdvancedDataSet = new ExamenOpdracht_JaimyVanAudenhove.ExamenDotNETAdvancedDataSet();
+            this.moviesTableAdapter = new ExamenOpdracht_JaimyVanAudenhove.ExamenDotNETAdvancedDataSetTableAdapters.MoviesTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.examenDotNETAdvancedDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.examenDotNETAdvancedDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -60,7 +60,7 @@
             this.movieStoreToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1245, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1263, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -89,6 +89,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -107,23 +109,10 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1245, 426);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(1263, 426);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // examenDotNETAdvancedDataSet
-            // 
-            this.examenDotNETAdvancedDataSet.DataSetName = "ExamenDotNETAdvancedDataSet";
-            this.examenDotNETAdvancedDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // moviesBindingSource
-            // 
-            this.moviesBindingSource.DataMember = "Movies";
-            this.moviesBindingSource.DataSource = this.examenDotNETAdvancedDataSet;
-            // 
-            // moviesTableAdapter
-            // 
-            this.moviesTableAdapter.ClearBeforeFill = true;
             // 
             // movieIdDataGridViewTextBoxColumn
             // 
@@ -138,6 +127,7 @@
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Naam";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 200;
             // 
             // ratingDataGridViewTextBoxColumn
@@ -145,41 +135,48 @@
             this.ratingDataGridViewTextBoxColumn.DataPropertyName = "Rating";
             this.ratingDataGridViewTextBoxColumn.HeaderText = "Minimum Leeftijd";
             this.ratingDataGridViewTextBoxColumn.Name = "ratingDataGridViewTextBoxColumn";
+            this.ratingDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // rentalDurationDataGridViewTextBoxColumn
             // 
             this.rentalDurationDataGridViewTextBoxColumn.DataPropertyName = "Rental_Duration";
             this.rentalDurationDataGridViewTextBoxColumn.HeaderText = "Leentijd";
             this.rentalDurationDataGridViewTextBoxColumn.Name = "rentalDurationDataGridViewTextBoxColumn";
+            this.rentalDurationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // amountGentDataGridViewTextBoxColumn
             // 
             this.amountGentDataGridViewTextBoxColumn.DataPropertyName = "Amount_Gent";
             this.amountGentDataGridViewTextBoxColumn.HeaderText = "Beschikbaar Gent";
             this.amountGentDataGridViewTextBoxColumn.Name = "amountGentDataGridViewTextBoxColumn";
+            this.amountGentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // amountBrusselDataGridViewTextBoxColumn
             // 
             this.amountBrusselDataGridViewTextBoxColumn.DataPropertyName = "Amount_Brussel";
             this.amountBrusselDataGridViewTextBoxColumn.HeaderText = "Beschikbaar Brussel";
             this.amountBrusselDataGridViewTextBoxColumn.Name = "amountBrusselDataGridViewTextBoxColumn";
+            this.amountBrusselDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // amountAntwerpenDataGridViewTextBoxColumn
             // 
             this.amountAntwerpenDataGridViewTextBoxColumn.DataPropertyName = "Amount_Antwerpen";
             this.amountAntwerpenDataGridViewTextBoxColumn.HeaderText = "Beschikbaar Antwerpen";
             this.amountAntwerpenDataGridViewTextBoxColumn.Name = "amountAntwerpenDataGridViewTextBoxColumn";
+            this.amountAntwerpenDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // returnedDataGridViewTextBoxColumn
             // 
             this.returnedDataGridViewTextBoxColumn.DataPropertyName = "Returned";
             this.returnedDataGridViewTextBoxColumn.HeaderText = "Teruggebracht";
             this.returnedDataGridViewTextBoxColumn.Name = "returnedDataGridViewTextBoxColumn";
+            this.returnedDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ReturnOneGent
             // 
             this.ReturnOneGent.HeaderText = "Terug naar Gent";
             this.ReturnOneGent.Name = "ReturnOneGent";
+            this.ReturnOneGent.ReadOnly = true;
             this.ReturnOneGent.Text = "1x naar Gent";
             this.ReturnOneGent.UseColumnTextForButtonValue = true;
             // 
@@ -187,28 +184,45 @@
             // 
             this.ReturnOneBrussel.HeaderText = "Terug naar Brussel";
             this.ReturnOneBrussel.Name = "ReturnOneBrussel";
+            this.ReturnOneBrussel.ReadOnly = true;
             // 
             // ReturnOneAntwerpen
             // 
             this.ReturnOneAntwerpen.HeaderText = "Terug naar Antwerpen";
             this.ReturnOneAntwerpen.Name = "ReturnOneAntwerpen";
+            this.ReturnOneAntwerpen.ReadOnly = true;
+            // 
+            // moviesBindingSource
+            // 
+            this.moviesBindingSource.DataMember = "Movies";
+            this.moviesBindingSource.DataSource = this.examenDotNETAdvancedDataSet;
+            // 
+            // examenDotNETAdvancedDataSet
+            // 
+            this.examenDotNETAdvancedDataSet.DataSetName = "ExamenDotNETAdvancedDataSet";
+            this.examenDotNETAdvancedDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // moviesTableAdapter
+            // 
+            this.moviesTableAdapter.ClearBeforeFill = true;
             // 
             // MSMoviesAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1245, 450);
+            this.ClientSize = new System.Drawing.Size(1263, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MSMoviesAdmin";
             this.Text = "Admin paneel films";
             this.Load += new System.EventHandler(this.MSMoviesAdmin_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.examenDotNETAdvancedDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.examenDotNETAdvancedDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

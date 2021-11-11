@@ -160,6 +160,7 @@
             // tbMovieName
             // 
             this.tbMovieName.Location = new System.Drawing.Point(81, 91);
+            this.tbMovieName.MaxLength = 50;
             this.tbMovieName.Name = "tbMovieName";
             this.tbMovieName.Size = new System.Drawing.Size(281, 20);
             this.tbMovieName.TabIndex = 11;
@@ -267,6 +268,7 @@
             this.Controls.Add(this.lbNieuweFilmAdminNewMovie);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MSNewMovieAdmin";
             this.Text = "MSNewMovieAdmin";
             this.Load += new System.EventHandler(this.MSNewMovieAdmin_Load);

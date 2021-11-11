@@ -25,6 +25,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove
         {
             cn = new SqlConnection(@"Data Source=jaimy.database.windows.net;Initial Catalog=ExamenDotNETAdvanced;Persist Security Info=True;User ID=jaimy;Password=DotNetExamen1");
             cn.Open();
+            dateTimePickerGeboortedatumRegister.MaxDate = DateTime.Today;
         }
         private void btnRegister_Click(object sender, EventArgs e)
         {

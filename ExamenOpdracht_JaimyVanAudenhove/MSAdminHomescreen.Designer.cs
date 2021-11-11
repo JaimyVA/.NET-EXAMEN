@@ -153,6 +153,7 @@
             this.Controls.Add(this.btnGebruikersAdmin);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MSAdminHomescreen";
             this.Text = "MovieStore Admin";
             this.Load += new System.EventHandler(this.MSAdminHomescreen_Load);

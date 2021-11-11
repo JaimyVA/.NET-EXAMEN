@@ -60,6 +60,7 @@
             // tbPasswordLogin
             // 
             this.tbPasswordLogin.Location = new System.Drawing.Point(73, 104);
+            this.tbPasswordLogin.MaxLength = 50;
             this.tbPasswordLogin.Name = "tbPasswordLogin";
             this.tbPasswordLogin.PasswordChar = '*';
             this.tbPasswordLogin.Size = new System.Drawing.Size(131, 20);
@@ -77,6 +78,7 @@
             // tbUserNameLogin
             // 
             this.tbUserNameLogin.Location = new System.Drawing.Point(73, 52);
+            this.tbUserNameLogin.MaxLength = 50;
             this.tbUserNameLogin.Name = "tbUserNameLogin";
             this.tbUserNameLogin.Size = new System.Drawing.Size(131, 20);
             this.tbUserNameLogin.TabIndex = 6;
@@ -111,6 +113,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "AdminLogin";
             this.Text = "Admin Login";
             this.Load += new System.EventHandler(this.AdminLogin_Load);

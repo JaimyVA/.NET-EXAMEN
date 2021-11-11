@@ -36,10 +36,10 @@
             this.lbUserNameAccount = new System.Windows.Forms.Label();
             this.tbUserNameAccount = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lbStrikesAccount = new System.Windows.Forms.Label();
             this.movieStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.terugNaarHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uitloggenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbStrikesAccount = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,18 +113,6 @@
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // lbStrikesAccount
-            // 
-            this.lbStrikesAccount.AutoSize = true;
-            this.lbStrikesAccount.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbStrikesAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStrikesAccount.Location = new System.Drawing.Point(0, 242);
-            this.lbStrikesAccount.Name = "lbStrikesAccount";
-            this.lbStrikesAccount.Size = new System.Drawing.Size(46, 17);
-            this.lbStrikesAccount.TabIndex = 23;
-            this.lbStrikesAccount.Text = "label1";
-            this.lbStrikesAccount.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
             // movieStoreToolStripMenuItem
             // 
             this.movieStoreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -137,16 +125,28 @@
             // terugNaarHomeToolStripMenuItem
             // 
             this.terugNaarHomeToolStripMenuItem.Name = "terugNaarHomeToolStripMenuItem";
-            this.terugNaarHomeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.terugNaarHomeToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.terugNaarHomeToolStripMenuItem.Text = "Terug naar Home";
             this.terugNaarHomeToolStripMenuItem.Click += new System.EventHandler(this.terugNaarHomeToolStripMenuItem_Click);
             // 
             // uitloggenToolStripMenuItem
             // 
             this.uitloggenToolStripMenuItem.Name = "uitloggenToolStripMenuItem";
-            this.uitloggenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uitloggenToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.uitloggenToolStripMenuItem.Text = "Uitloggen";
             this.uitloggenToolStripMenuItem.Click += new System.EventHandler(this.uitloggenToolStripMenuItem_Click);
+            // 
+            // lbStrikesAccount
+            // 
+            this.lbStrikesAccount.AutoSize = true;
+            this.lbStrikesAccount.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lbStrikesAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStrikesAccount.Location = new System.Drawing.Point(0, 242);
+            this.lbStrikesAccount.Name = "lbStrikesAccount";
+            this.lbStrikesAccount.Size = new System.Drawing.Size(46, 17);
+            this.lbStrikesAccount.TabIndex = 23;
+            this.lbStrikesAccount.Text = "label1";
+            this.lbStrikesAccount.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // Account
             // 
@@ -164,6 +164,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Account";
             this.Text = "Account";
             this.Load += new System.EventHandler(this.Account_Load);

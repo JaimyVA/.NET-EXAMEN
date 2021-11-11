@@ -179,7 +179,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove
                 }
                 else
                 {
-                    MessageBox.Show("Er zijn geen films meer om terug te sturen naar de MovieStore Gent");
+                    MessageBox.Show("Er zijn geen films meer om terug te sturen naar de MovieStore Gent", "Geen films", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (e.ColumnIndex == dataGridView1.Columns["ReturnOneBrussel"].Index)
@@ -198,7 +198,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove
                 }
                 else
                 {
-                    MessageBox.Show("Er zijn geen films meer om terug te sturen naar de MovieStore Brussel");
+                    MessageBox.Show("Er zijn geen films meer om terug te sturen naar de MovieStore Brussel", "Geen films", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (e.ColumnIndex == dataGridView1.Columns["ReturnOneAntwerpen"].Index)
@@ -217,7 +217,7 @@ namespace ExamenOpdracht_JaimyVanAudenhove
                 }
                 else
                 {
-                    MessageBox.Show("Er zijn geen films meer om terug te sturen naar de MovieStore Antwerpen");
+                    MessageBox.Show("Er zijn geen films meer om terug te sturen naar de MovieStore Antwerpen", "Geen films", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             this.BindGrid();
