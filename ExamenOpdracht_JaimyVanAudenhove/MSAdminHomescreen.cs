@@ -47,5 +47,12 @@ namespace ExamenOpdracht_JaimyVanAudenhove
         {
             lbWelcomeHomescreen.Text = "Welkom " + AdminLogin.SetValueForUserName + "!";
         }
+
+        private void btnNewMovieAdmin_Click(object sender, EventArgs e)
+        {
+            var AdminHomeToNewMovieAdmin = new MSNewMovieAdmin();
+            this.Hide();
+            AdminHomeToNewMovieAdmin.Show();
+        }
     }
 }

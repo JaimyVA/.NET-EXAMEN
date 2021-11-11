@@ -36,6 +36,8 @@
             this.btnFilmsAdmin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnNewMovieAdmin = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,11 +119,33 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Bekijk de films en stuur ze terug";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(167, 321);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Voeg nieuwe films toe";
+            // 
+            // btnNewMovieAdmin
+            // 
+            this.btnNewMovieAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewMovieAdmin.Location = new System.Drawing.Point(140, 338);
+            this.btnNewMovieAdmin.Name = "btnNewMovieAdmin";
+            this.btnNewMovieAdmin.Size = new System.Drawing.Size(163, 81);
+            this.btnNewMovieAdmin.TabIndex = 12;
+            this.btnNewMovieAdmin.Text = "Nieuwe film toevoegen";
+            this.btnNewMovieAdmin.UseVisualStyleBackColor = true;
+            this.btnNewMovieAdmin.Click += new System.EventHandler(this.btnNewMovieAdmin_Click);
+            // 
             // MSAdminHomescreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 324);
+            this.ClientSize = new System.Drawing.Size(447, 431);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnNewMovieAdmin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnFilmsAdmin);
@@ -149,5 +173,7 @@
         private System.Windows.Forms.Button btnFilmsAdmin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnNewMovieAdmin;
     }
 }

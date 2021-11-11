@@ -135,6 +135,12 @@
     <Compile Include="MSMoviesAdmin.Designer.cs">
       <DependentUpon>MSMoviesAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="MSNewMovieAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSNewMovieAdmin.Designer.cs">
+      <DependentUpon>MSNewMovieAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="MSUsersAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MSMoviesAdmin.resx">
       <DependentUpon>MSMoviesAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSNewMovieAdmin.resx">
+      <DependentUpon>MSNewMovieAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MSUsersAdmin.resx">
       <DependentUpon>MSUsersAdmin.cs</DependentUpon>

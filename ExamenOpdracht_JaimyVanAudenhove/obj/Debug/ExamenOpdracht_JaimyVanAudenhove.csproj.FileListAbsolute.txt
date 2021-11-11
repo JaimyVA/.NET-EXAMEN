@@ -25,3 +25,4 @@ C:\Users\jaimy\source\repos\ExamenOpdracht_JaimyVanAudenhove\ExamenOpdracht_Jaim
 C:\Users\jaimy\source\repos\ExamenOpdracht_JaimyVanAudenhove\ExamenOpdracht_JaimyVanAudenhove\obj\Debug\ExamenOpdracht_JaimyVanAudenhove.MSAdminHomescreen.resources
 C:\Users\jaimy\source\repos\ExamenOpdracht_JaimyVanAudenhove\ExamenOpdracht_JaimyVanAudenhove\obj\Debug\ExamenOpdracht_JaimyVanAudenhove.MSUsersAdmin.resources
 C:\Users\jaimy\source\repos\ExamenOpdracht_JaimyVanAudenhove\ExamenOpdracht_JaimyVanAudenhove\obj\Debug\ExamenOpdracht_JaimyVanAudenhove.MSMoviesAdmin.resources
+C:\Users\jaimy\source\repos\ExamenOpdracht_JaimyVanAudenhove\ExamenOpdracht_JaimyVanAudenhove\obj\Debug\ExamenOpdracht_JaimyVanAudenhove.MSNewMovieAdmin.resources
