@@ -13,10 +13,6 @@ namespace ExamenOpdracht_JaimyVanAudenhove
 {
     public partial class MSUsersAdmin : Form
     {
-        private const string ConnectionString = @"Data Source=jaimy.database.windows.net;Initial Catalog=ExamenDotNETAdvanced;Persist Security Info=True;User ID=jaimy;Password=DotNetExamen1;MultipleActiveResultSets=true";
-        private SqlCommand cmd;
-        private SqlDataReader dr;
-        private SqlConnection cn;
         public MSUsersAdmin()
         {
             InitializeComponent();
@@ -24,8 +20,10 @@ namespace ExamenOpdracht_JaimyVanAudenhove
 
         private void MSUsersAdmin_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'examenDotNETAdvancedDataSet.Users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.examenDotNETAdvancedDataSet.Users);
+            //Linq data ophaling voor dataGridView1
+            ExamenDotNETAdvancedEntities2 UDS = new ExamenDotNETAdvancedEntities2();
+            dataGridView1.DataSource = UDS.Users.Select(x => new { x.Id, x.username, x.DOB, x.Strikes }).ToList();
+
         }
 
         private void terugNaarAdminHomeToolStripMenuItem_Click(object sender, EventArgs e)
