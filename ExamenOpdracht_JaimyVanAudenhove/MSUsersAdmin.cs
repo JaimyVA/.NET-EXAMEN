@@ -13,6 +13,10 @@ namespace ExamenOpdracht_JaimyVanAudenhove
 {
     public partial class MSUsersAdmin : Form
     {
+        private const string ConnectionString = @"Data Source=jaimy.database.windows.net;Initial Catalog=ExamenDotNETAdvanced;Persist Security Info=True;User ID=jaimy;Password=DotNetExamen1;MultipleActiveResultSets=true";
+        private SqlCommand cmd;
+        private SqlDataReader dr;
+        private SqlConnection cn;
         public MSUsersAdmin()
         {
             InitializeComponent();

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ExamenDotNETAdvancedModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="ExamenDotNETAdvancedModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ExamenDotNETAdvanced.dbo.Movie_Rentals' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Movie_Rentals">
@@ -12,42 +12,42 @@ warning 6002: The table/view 'ExamenDotNETAdvanced.dbo.Movie_Rentals' does not h
             <PropertyRef Name="RentalId" />
             <PropertyRef Name="MovieId" />
           </Key>
-          <Property Name="RentalId" Type="int" Nullable="false" />
-          <Property Name="MovieId" Type="int" Nullable="false" />
+          <Property Name="RentalId" Nullable="false" Type="int" />
+          <Property Name="MovieId" Nullable="false" Type="int" />
         </EntityType>
         <EntityType Name="Movies">
           <Key>
             <PropertyRef Name="MovieId" />
           </Key>
-          <Property Name="MovieId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Rating" Type="int" Nullable="false" />
-          <Property Name="Rental_Duration" Type="int" Nullable="false" />
-          <Property Name="Amount_Gent" Type="int" Nullable="false" />
-          <Property Name="Amount_Brussel" Type="int" Nullable="false" />
-          <Property Name="Amount_Antwerpen" Type="int" Nullable="false" />
+          <Property Name="MovieId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Name" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="Rating" Nullable="false" Type="int" />
+          <Property Name="Rental_Duration" Nullable="false" Type="int" />
+          <Property Name="Amount_Gent" Nullable="false" Type="int" />
+          <Property Name="Amount_Brussel" Nullable="false" Type="int" />
+          <Property Name="Amount_Antwerpen" Nullable="false" Type="int" />
         </EntityType>
         <EntityType Name="Rental">
           <Key>
             <PropertyRef Name="Rental_Id" />
           </Key>
-          <Property Name="Rental_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Rental_Date" Type="date" Nullable="false" />
-          <Property Name="Rental_Expiry" Type="date" Nullable="false" />
-          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Rental_Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Rental_Date" Nullable="false" Type="date" />
+          <Property Name="Rental_Expiry" Nullable="false" Type="date" />
+          <Property Name="UserId" Nullable="false" Type="int" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="password" Type="varchar" MaxLength="60" Nullable="false" />
-          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="username" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="password" Nullable="false" MaxLength="60" Type="varchar" />
+          <Property Name="DOB" Nullable="false" Type="date" />
         </EntityType>
         <Association Name="FK_Movie_Rentals_ToMovie">
-          <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
-          <End Role="Movie_Rentals" Type="Self.Movie_Rentals" Multiplicity="*" />
+          <End Type="Self.Movies" Multiplicity="1" Role="Movies" />
+          <End Type="Self.Movie_Rentals" Multiplicity="*" Role="Movie_Rentals" />
           <ReferentialConstraint>
             <Principal Role="Movies">
               <PropertyRef Name="MovieId" />
@@ -58,8 +58,8 @@ warning 6002: The table/view 'ExamenDotNETAdvanced.dbo.Movie_Rentals' does not h
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Movie_Rentals_ToRental">
-          <End Role="Rental" Type="Self.Rental" Multiplicity="1" />
-          <End Role="Movie_Rentals" Type="Self.Movie_Rentals" Multiplicity="*" />
+          <End Type="Self.Rental" Multiplicity="1" Role="Rental" />
+          <End Type="Self.Movie_Rentals" Multiplicity="*" Role="Movie_Rentals" />
           <ReferentialConstraint>
             <Principal Role="Rental">
               <PropertyRef Name="Rental_Id" />
@@ -70,8 +70,8 @@ warning 6002: The table/view 'ExamenDotNETAdvanced.dbo.Movie_Rentals' does not h
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Users_ToMovies">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+          <End Type="Self.Users" Multiplicity="1" Role="Users" />
+          <End Type="Self.Rental" Multiplicity="*" Role="Rental" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -92,16 +92,16 @@ warning 6002: The table/view 'ExamenDotNETAdvanced.dbo.Movie_Rentals' does not h
     FROM [dbo].[Movie_Rentals] AS [Movie_Rentals]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_Movie_Rentals_ToMovie" Association="Self.FK_Movie_Rentals_ToMovie">
-            <End Role="Movies" EntitySet="Movies" />
-            <End Role="Movie_Rentals" EntitySet="Movie_Rentals" />
+            <End EntitySet="Movies" Role="Movies" />
+            <End EntitySet="Movie_Rentals" Role="Movie_Rentals" />
           </AssociationSet>
           <AssociationSet Name="FK_Movie_Rentals_ToRental" Association="Self.FK_Movie_Rentals_ToRental">
-            <End Role="Rental" EntitySet="Rental" />
-            <End Role="Movie_Rentals" EntitySet="Movie_Rentals" />
+            <End EntitySet="Rental" Role="Rental" />
+            <End EntitySet="Movie_Rentals" Role="Movie_Rentals" />
           </AssociationSet>
           <AssociationSet Name="FK_Users_ToMovies" Association="Self.FK_Users_ToMovies">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Rental" EntitySet="Rental" />
+            <End EntitySet="Users" Role="Users" />
+            <End EntitySet="Rental" Role="Rental" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
